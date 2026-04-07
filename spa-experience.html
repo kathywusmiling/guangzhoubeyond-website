@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Chinese Massage &amp; Spa Experience — Guangzhou Beyond</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF7F2;
+    --dark: #0F0F0F;
+    --gold: #C8973A;
+    --gold-light: #E8B85C;
+    --green: #2A7A4B;
+    --green-bright: #3DAA68;
+    --red: #C13B2A;
+    --text-muted: #6B6560;
+    --card-bg: #FFFFFF;
+    --border: #E8E3DC;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--dark); overflow-x: hidden; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 48px;
+    background: rgba(250,247,242,0.92); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+  .nav-logo a { color: var(--dark); text-decoration: none; }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--dark); font-size: 14px; font-weight: 500; opacity: 0.7; transition: opacity 0.2s; }
+  .nav-links a:hover { opacity: 1; }
+  .nav-cta {
+    background: var(--green-bright); color: white;
+    padding: 10px 22px; border-radius: 100px;
+    text-decoration: none; font-size: 14px; font-weight: 600;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .nav-cta:hover { background: var(--green); transform: translateY(-1px); }
+
+  .tour-hero {
+    padding: 160px 48px 80px;
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center;
+  }
+  .tour-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(200,151,58,0.12); color: var(--gold);
+    padding: 6px 14px; border-radius: 100px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.5px;
+    text-transform: uppercase; margin-bottom: 22px;
+  }
+  .tour-badge::before { content: '✦'; font-size: 10px; }
+  .tour-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 4.6vw, 64px);
+    line-height: 1.06; letter-spacing: -1.5px; margin-bottom: 22px;
+  }
+  .tour-hero h1 em { font-style: italic; color: var(--gold); }
+  .tour-hero .lead { font-size: 18px; line-height: 1.7; color: var(--text-muted); margin-bottom: 28px; }
+  .tour-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: white; border: 1px solid var(--border);
+    padding: 8px 16px; border-radius: 100px;
+    font-size: 13px; font-weight: 500;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--green-bright); color: white;
+    padding: 16px 32px; border-radius: 100px;
+    font-size: 16px; font-weight: 600; text-decoration: none;
+    box-shadow: 0 4px 20px rgba(61,170,104,0.3);
+    transition: all 0.25s;
+  }
+  .btn-primary:hover { background: var(--green); transform: translateY(-2px); }
+
+  .hero-visual {
+    aspect-ratio: 4/5;
+    display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr;
+    gap: 12px;
+  }
+  .hero-visual .img-main { grid-row: 1 / 3; border-radius: 24px; overflow: hidden; box-shadow: 0 30px 80px rgba(120,80,60,0.22); }
+  .hero-visual .img-side { border-radius: 18px; overflow: hidden; box-shadow: 0 16px 40px rgba(120,80,60,0.16); }
+  .hero-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .photo-strip { max-width: 1100px; margin: 0 auto; padding: 0 48px 20px; display: grid; grid-template-columns: 1fr; gap: 16px; }
+  .photo-strip figure { margin: 0; border-radius: 18px; overflow: hidden; aspect-ratio: 21/9; box-shadow: 0 18px 48px rgba(0,0,0,0.08); }
+  .photo-strip img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+  .photo-strip figure:hover img { transform: scale(1.05); }
+
+  .section { max-width: 1100px; margin: 0 auto; padding: 60px 48px; }
+  .section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 3.2vw, 42px);
+    letter-spacing: -1px; margin-bottom: 14px;
+  }
+  .section .sub { color: var(--text-muted); font-size: 16px; margin-bottom: 36px; max-width: 640px; line-height: 1.7; }
+
+  .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .option-card {
+    background: white; border: 1.5px solid var(--border);
+    border-radius: 20px; padding: 32px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .option-card:hover { border-color: var(--gold); box-shadow: 0 12px 40px rgba(200,151,58,0.12); }
+  .option-icon {
+    width: 56px; height: 56px; background: rgba(200,151,58,0.12);
+    border-radius: 14px; display: flex; align-items: center; justify-content: center;
+    font-size: 28px; margin-bottom: 18px;
+  }
+  .option-card h3 { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 8px; }
+  .option-card p { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+
+  .itinerary { display: flex; flex-direction: column; gap: 14px; }
+  .step {
+    background: white; border: 1px solid var(--border); border-radius: 16px;
+    padding: 22px 26px; display: grid; grid-template-columns: 60px 1fr; gap: 20px; align-items: start;
+  }
+  .step-num {
+    font-family: 'Playfair Display', serif; font-size: 32px;
+    color: var(--gold); font-style: italic; line-height: 1;
+  }
+  .step h4 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 4px; }
+  .step p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+
+  .info-strip {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+    background: white; border: 1px solid var(--border);
+    border-radius: 20px; padding: 32px;
+  }
+  .info-item .label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 6px; }
+  .info-item .value { font-family: 'Playfair Display', serif; font-size: 18px; }
+
+  .cta-section {
+    background: var(--dark); color: white;
+    text-align: center; padding: 90px 48px; margin-top: 40px;
+  }
+  .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 3.5vw, 46px); margin-bottom: 14px; }
+  .cta-section p { color: rgba(255,255,255,0.6); margin-bottom: 32px; font-size: 16px; }
+  .btn-gold {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--gold); color: white;
+    padding: 16px 34px; border-radius: 100px;
+    font-size: 16px; font-weight: 600; text-decoration: none;
+    transition: all 0.25s; box-shadow: 0 6px 24px rgba(200,151,58,0.35);
+  }
+  .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  footer {
+    background: var(--dark); color: rgba(255,255,255,0.5);
+    padding: 36px 48px; text-align: center; font-size: 13px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+  }
+  .footer-logo { font-family: 'Playfair Display', serif; color: white; font-size: 18px; }
+  .footer-logo span { color: var(--gold); }
+  footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+
+  .float-wa {
+    position: fixed; bottom: 28px; right: 28px;
+    width: 58px; height: 58px; border-radius: 50%;
+    background: var(--green-bright); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px; text-decoration: none;
+    box-shadow: 0 8px 24px rgba(61,170,104,0.4);
+    z-index: 90; transition: transform 0.2s;
+  }
+  .float-wa:hover { transform: scale(1.08); }
+
+  @media (max-width: 880px) {
+    nav { padding: 16px 20px; } .nav-links { display: none; }
+    .tour-hero { grid-template-columns: 1fr; padding: 130px 24px 60px; gap: 40px; }
+    .section { padding: 50px 24px; }
+    .photo-strip { padding: 0 24px 16px; }
+    .options-grid { grid-template-columns: 1fr; }
+    .info-strip { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><a href="index.html">Guangzhou <span>Beyond</span></a></div>
+  <ul class="nav-links">
+    <li><a href="index.html#tours">Tours</a></li>
+    <li><a href="index.html#gems">Hidden Gems</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#testimonials">Reviews</a></li>
+  </ul>
+  <a href="https://wa.me/85255087775" class="nav-cta">💬 WhatsApp Me</a>
+</nav>
+
+<section class="tour-hero">
+  <div>
+    <div class="tour-badge">Flexible 1–3 Hours</div>
+    <h1>Luxury Chinese<br><em>Massage &amp; Spa</em></h1>
+    <p class="lead">After a long flight or a packed day of sightseeing, there's nothing quite like sinking into a beautifully styled Guangzhou spa for a proper Chinese massage. I'll match you with one of the city's best-kept spa secrets — gorgeous interiors, skilled therapists, English-friendly hosts — and handle the booking, the language, and even the door-to-door transport. All you have to do is relax.</p>
+    <div class="tour-pills">
+      <span class="pill">⏱ Flexible (1–3 hrs)</span>
+      <span class="pill">💆 Hand-picked spa</span>
+      <span class="pill">🇬🇧 English-speaking host</span>
+      <span class="pill">🌿 Traditional Chinese therapy</span>
+    </div>
+    <a href="https://wa.me/85255087775?text=Hi!%20I'd%20like%20to%20book%20the%20Luxury%20Chinese%20Massage%20%26%20Spa%20experience" class="btn-primary">💬 Book on WhatsApp</a>
+  </div>
+  <div class="hero-visual">
+    <div class="img-main"><img src="spa/IMG_2613.jpg" alt="Luxury Chinese spa room in Guangzhou"></div>
+    <div class="img-side"><img src="spa/IMG_2614.jpg" alt="Elegant spa interior with traditional Chinese styling"></div>
+    <div class="img-side"><img src="spa/IMG_2615.jpg" alt="Calm massage room ready for a Chinese therapy session"></div>
+  </div>
+</section>
+
+<div class="photo-strip">
+  <figure><img src="spa/IMG_2616.jpg" alt="Beautifully styled Guangzhou spa lounge"></figure>
+</div>
+
+<section class="section">
+  <h2>What you can choose</h2>
+  <p class="sub">A quick reset, or a full afternoon of self-care — your call.</p>
+  <div class="options-grid">
+    <div class="option-card">
+      <div class="option-icon">💆</div>
+      <h3>Traditional Chinese Massage</h3>
+      <p>Deep, therapeutic, and the kind that genuinely melts away jet lag and long-walk soreness. Perfect after a packed day of sightseeing — you'll feel like a new person walking out the door.</p>
+    </div>
+    <div class="option-card">
+      <div class="option-icon">🌿</div>
+      <h3>Full Spa Experience</h3>
+      <p>Longer treatments combining massage, foot reflexology, herbal soaks and tea ceremonies — a proper afternoon of self-care, locally styled, in one of the most beautifully designed spas in the city.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>How it unfolds</h2>
+  <p class="sub">Easy, friendly, and tailored to whatever your body actually needs that day.</p>
+  <div class="itinerary">
+    <div class="step"><div class="step-num">01</div><div><h4>Tell me what you need</h4><p>A quick chat on WhatsApp so I can match you with the right spa and the right kind of treatment — relaxing, therapeutic, or both.</p></div></div>
+    <div class="step"><div class="step-num">02</div><div><h4>Hotel pick-up</h4><p>I'll meet you at your hotel and we'll travel together to the spa. No address confusion, no language stress.</p></div></div>
+    <div class="step"><div class="step-num">03</div><div><h4>Welcome at the spa</h4><p>I'll handle check-in, translate any preferences for the therapists, and make sure everything is set up exactly the way you want it. Then it's just you, the music, and the massage.</p></div></div>
+    <div class="step"><div class="step-num">04</div><div><h4>Tea &amp; easy drop-off</h4><p>We finish with a quiet cup of Chinese tea, then I'll get you safely back to your hotel — usually a lot calmer than when we left.</p></div></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Good to know</h2>
+  <div class="info-strip">
+    <div class="info-item"><div class="label">Duration</div><div class="value">1–3 hours</div></div>
+    <div class="info-item"><div class="label">Group size</div><div class="value">Private, 1–4</div></div>
+    <div class="info-item"><div class="label">Language</div><div class="value">English</div></div>
+    <div class="info-item"><div class="label">Best for</div><div class="value">Anyone needing a reset</div></div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Ready to truly relax?</h2>
+  <p>Send me a message and we'll set up the perfect spa afternoon.</p>
+  <a href="https://wa.me/85255087775?text=Hi!%20I'd%20like%20to%20book%20the%20Luxury%20Chinese%20Massage%20%26%20Spa%20experience" class="btn-gold">💬 Chat on WhatsApp</a>
+</section>
+
+<footer>
+  <div class="footer-logo">Guangzhou <span>Beyond</span></div>
+  <div>© 2025 Guangzhou Beyond · Guangzhou, China</div>
+  <div><a href="https://wa.me/85255087775">WhatsApp</a></div>
+</footer>
+
+<a href="https://wa.me/85255087775" class="float-wa" title="Chat on WhatsApp">💬</a>
+
+</body>
+</html>

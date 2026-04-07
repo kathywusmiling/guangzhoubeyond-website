@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Textile Market &amp; Garment Factory Tour — Guangzhou Beyond</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF7F2;
+    --dark: #0F0F0F;
+    --gold: #C8973A;
+    --gold-light: #E8B85C;
+    --green: #2A7A4B;
+    --green-bright: #3DAA68;
+    --red: #C13B2A;
+    --text-muted: #6B6560;
+    --card-bg: #FFFFFF;
+    --border: #E8E3DC;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--dark); overflow-x: hidden; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 48px;
+    background: rgba(250,247,242,0.92); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+  .nav-logo a { color: var(--dark); text-decoration: none; }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--dark); font-size: 14px; font-weight: 500; opacity: 0.7; transition: opacity 0.2s; }
+  .nav-links a:hover { opacity: 1; }
+  .nav-cta {
+    background: var(--green-bright); color: white;
+    padding: 10px 22px; border-radius: 100px;
+    text-decoration: none; font-size: 14px; font-weight: 600;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .nav-cta:hover { background: var(--green); transform: translateY(-1px); }
+
+  .tour-hero {
+    padding: 160px 48px 80px;
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center;
+  }
+  .tour-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(200,151,58,0.12); color: var(--gold);
+    padding: 6px 14px; border-radius: 100px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.5px;
+    text-transform: uppercase; margin-bottom: 22px;
+  }
+  .tour-badge::before { content: '✦'; font-size: 10px; }
+  .tour-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 4.6vw, 64px);
+    line-height: 1.06; letter-spacing: -1.5px; margin-bottom: 22px;
+  }
+  .tour-hero h1 em { font-style: italic; color: var(--gold); }
+  .tour-hero .lead { font-size: 18px; line-height: 1.7; color: var(--text-muted); margin-bottom: 28px; }
+  .tour-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: white; border: 1px solid var(--border);
+    padding: 8px 16px; border-radius: 100px;
+    font-size: 13px; font-weight: 500;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--green-bright); color: white;
+    padding: 16px 32px; border-radius: 100px;
+    font-size: 16px; font-weight: 600; text-decoration: none;
+    box-shadow: 0 4px 20px rgba(61,170,104,0.3);
+    transition: all 0.25s;
+  }
+  .btn-primary:hover { background: var(--green); transform: translateY(-2px); }
+
+  .hero-visual {
+    aspect-ratio: 4/5;
+    display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr;
+    gap: 12px;
+  }
+  .hero-visual .img-main { grid-row: 1 / 3; border-radius: 24px; overflow: hidden; box-shadow: 0 30px 80px rgba(193,59,42,0.18); }
+  .hero-visual .img-side { border-radius: 18px; overflow: hidden; box-shadow: 0 16px 40px rgba(193,59,42,0.15); }
+  .hero-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .photo-strip { max-width: 1100px; margin: 0 auto; padding: 0 48px 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .photo-strip figure { margin: 0; border-radius: 18px; overflow: hidden; aspect-ratio: 4/3; box-shadow: 0 18px 48px rgba(0,0,0,0.08); }
+  .photo-strip img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+  .photo-strip figure:hover img { transform: scale(1.05); }
+
+  .section { max-width: 1100px; margin: 0 auto; padding: 60px 48px; }
+  .section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 3.2vw, 42px);
+    letter-spacing: -1px; margin-bottom: 14px;
+  }
+  .section .sub { color: var(--text-muted); font-size: 16px; margin-bottom: 36px; max-width: 640px; line-height: 1.7; }
+
+  .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .option-card {
+    background: white; border: 1.5px solid var(--border);
+    border-radius: 20px; padding: 32px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .option-card:hover { border-color: var(--gold); box-shadow: 0 12px 40px rgba(200,151,58,0.12); }
+  .option-icon {
+    width: 56px; height: 56px; background: rgba(200,151,58,0.12);
+    border-radius: 14px; display: flex; align-items: center; justify-content: center;
+    font-size: 28px; margin-bottom: 18px;
+  }
+  .option-card h3 { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 8px; }
+  .option-card p { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+
+  .itinerary { display: flex; flex-direction: column; gap: 14px; }
+  .step {
+    background: white; border: 1px solid var(--border); border-radius: 16px;
+    padding: 22px 26px; display: grid; grid-template-columns: 60px 1fr; gap: 20px; align-items: start;
+  }
+  .step-num {
+    font-family: 'Playfair Display', serif; font-size: 32px;
+    color: var(--gold); font-style: italic; line-height: 1;
+  }
+  .step h4 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 4px; }
+  .step p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+
+  .info-strip {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+    background: white; border: 1px solid var(--border);
+    border-radius: 20px; padding: 32px;
+  }
+  .info-item .label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 6px; }
+  .info-item .value { font-family: 'Playfair Display', serif; font-size: 18px; }
+
+  .gallery-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+  .gallery-grid figure { border-radius: 16px; overflow: hidden; background: #eee; aspect-ratio: 1/1; margin: 0; }
+  .gallery-grid img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+  .gallery-grid figure:hover img { transform: scale(1.06); }
+
+  .cta-section {
+    background: var(--dark); color: white;
+    text-align: center; padding: 90px 48px; margin-top: 40px;
+  }
+  .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 3.5vw, 46px); margin-bottom: 14px; }
+  .cta-section p { color: rgba(255,255,255,0.6); margin-bottom: 32px; font-size: 16px; }
+  .btn-gold {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--gold); color: white;
+    padding: 16px 34px; border-radius: 100px;
+    font-size: 16px; font-weight: 600; text-decoration: none;
+    transition: all 0.25s; box-shadow: 0 6px 24px rgba(200,151,58,0.35);
+  }
+  .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  footer {
+    background: var(--dark); color: rgba(255,255,255,0.5);
+    padding: 36px 48px; text-align: center; font-size: 13px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+  }
+  .footer-logo { font-family: 'Playfair Display', serif; color: white; font-size: 18px; }
+  .footer-logo span { color: var(--gold); }
+  footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+
+  .float-wa {
+    position: fixed; bottom: 28px; right: 28px;
+    width: 58px; height: 58px; border-radius: 50%;
+    background: var(--green-bright); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px; text-decoration: none;
+    box-shadow: 0 8px 24px rgba(61,170,104,0.4);
+    z-index: 90; transition: transform 0.2s;
+  }
+  .float-wa:hover { transform: scale(1.08); }
+
+  @media (max-width: 880px) {
+    nav { padding: 16px 20px; } .nav-links { display: none; }
+    .tour-hero { grid-template-columns: 1fr; padding: 130px 24px 60px; gap: 40px; }
+    .section { padding: 50px 24px; }
+    .options-grid { grid-template-columns: 1fr; }
+    .info-strip { grid-template-columns: 1fr 1fr; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><a href="index.html">Guangzhou <span>Beyond</span></a></div>
+  <ul class="nav-links">
+    <li><a href="index.html#tours">Tours</a></li>
+    <li><a href="index.html#gems">Hidden Gems</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#testimonials">Reviews</a></li>
+  </ul>
+  <a href="https://wa.me/85255087775" class="nav-cta">💬 WhatsApp Me</a>
+</nav>
+
+<section class="tour-hero">
+  <div>
+    <div class="tour-badge">Half-Day Insider Visit</div>
+    <h1>Textile Market &amp;<br><em>Garment Factory</em></h1>
+    <p class="lead">Guangzhou is the quiet capital of the global clothing industry — and almost no tourist ever sees it. On this half-day insider visit, we'll wander the world's largest fabric market, then step inside a real working garment factory to watch a piece of clothing come to life from raw cloth to finished product. Hands-on, eye-opening, and a side of China you can't find anywhere else.</p>
+    <div class="tour-pills">
+      <span class="pill">⏱ Half day</span>
+      <span class="pill">🧵 Insider access</span>
+      <span class="pill">🇬🇧 English-speaking host</span>
+      <span class="pill">🌱 Beginner friendly</span>
+    </div>
+    <a href="https://wa.me/85255087775?text=Hi!%20I'd%20like%20to%20book%20the%20Textile%20Market%20%26%20Garment%20Factory%20tour" class="btn-primary">💬 Book on WhatsApp</a>
+  </div>
+  <div class="hero-visual">
+    <div class="img-main"><img src="textile-market/IMG_2606.jpg" alt="Inside Guangzhou's textile market — rolls of colorful fabric"></div>
+    <div class="img-side"><img src="textile-market/IMG_2607.jpg" alt="Stalls of fabric rolls in Guangzhou's textile market"></div>
+    <div class="img-side"><img src="textile-market/IMG_2608.jpg" alt="Bolts of colorful cloth stacked at the market"></div>
+  </div>
+</section>
+
+<div class="photo-strip">
+  <figure><img src="textile-market/IMG_2609.jpg" alt="Inside a working Guangzhou garment factory"></figure>
+  <figure><img src="textile-market/IMG_2610.jpg" alt="Garment workers cutting and stitching fabric"></figure>
+  <figure><img src="textile-market/IMG_2611.jpg" alt="Finished garments ready for shipment"></figure>
+</div>
+
+<section class="section">
+  <h2>What you'll experience</h2>
+  <p class="sub">Two halves of the same story: where the fabric comes from, and where the clothes are made.</p>
+  <div class="options-grid">
+    <div class="option-card">
+      <div class="option-icon">🧵</div>
+      <h3>The Fabric Market</h3>
+      <p>Endless rolls of silk, denim, lace, linen and synthetics, with stalls run by families who supply names you'd recognise. I'll show you how to spot quality, how prices work, and how to buy a few meters yourself if you'd like to take some home.</p>
+    </div>
+    <div class="option-card">
+      <div class="option-icon">🏭</div>
+      <h3>The Garment Factory</h3>
+      <p>A real working factory floor where pattern-making, cutting, stitching, pressing and quality checks all happen in front of you. You'll see how a finished garment is built in a matter of minutes — and meet the people behind it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>How the visit unfolds</h2>
+  <p class="sub">Easy, friendly, and full of moments you'll be telling friends about for months.</p>
+  <div class="itinerary">
+    <div class="step"><div class="step-num">01</div><div><h4>Pick-up &amp; transfer</h4><p>I'll meet you at your hotel and we'll travel together to Guangzhou's famous textile district — a part of the city most visitors never reach.</p></div></div>
+    <div class="step"><div class="step-num">02</div><div><h4>Walk the fabric halls</h4><p>We'll stroll the market together, stopping at stalls I know personally so you can touch the materials, ask questions, and see how it all works.</p></div></div>
+    <div class="step"><div class="step-num">03</div><div><h4>Inside the factory</h4><p>We move on to a working garment factory and watch every stage of production, from raw cloth to packaged garment, with everything explained in plain English.</p></div></div>
+    <div class="step"><div class="step-num">04</div><div><h4>Coffee &amp; easy drop-off</h4><p>We finish with a relaxed coffee or tea so you can ask any final questions, then I'll get you safely back to your hotel.</p></div></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Good to know</h2>
+  <div class="info-strip">
+    <div class="info-item"><div class="label">Duration</div><div class="value">~4 hours</div></div>
+    <div class="info-item"><div class="label">Group size</div><div class="value">Private, 1–4</div></div>
+    <div class="info-item"><div class="label">Language</div><div class="value">English</div></div>
+    <div class="info-item"><div class="label">Best for</div><div class="value">Curious travelers</div></div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Ready to see how it's really made?</h2>
+  <p>Send me a message and we'll pick a date that fits your trip.</p>
+  <a href="https://wa.me/85255087775?text=Hi!%20I'd%20like%20to%20book%20the%20Textile%20Market%20%26%20Garment%20Factory%20tour" class="btn-gold">💬 Chat on WhatsApp</a>
+</section>
+
+<footer>
+  <div class="footer-logo">Guangzhou <span>Beyond</span></div>
+  <div>© 2025 Guangzhou Beyond · Guangzhou, China</div>
+  <div><a href="https://wa.me/85255087775">WhatsApp</a></div>
+</footer>
+
+<a href="https://wa.me/85255087775" class="float-wa" title="Chat on WhatsApp">💬</a>
+
+</body>
+</html>
