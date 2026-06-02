@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hotels With Halal Breakfast in Guangzhou (2026 Guide)</title>
+<meta name="description" content="Find hotels in Guangzhou with halal breakfast options or near halal restaurants. Guide for Muslim travelers, business visitors, and families.">
+<meta name="keywords" content="halal breakfast Guangzhou, halal hotels, Muslim travelers, Guangzhou hotels">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF7F2;
+    --dark: #0F0F0F;
+    --gold: #C8973A;
+    --gold-light: #E8B85C;
+    --green: #2A7A4B;
+    --green-bright: #3DAA68;
+    --red: #C13B2A;
+    --text-muted: #6B6560;
+    --card-bg: #FFFFFF;
+    --border: #E8E3DC;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--dark); overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 48px;
+    background: rgba(250,247,242,0.92); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--dark); font-size: 14px; font-weight: 500; opacity: 0.7; transition: opacity 0.2s; }
+  .nav-links a:hover { opacity: 1; }
+  .nav-cta {
+    background: var(--green-bright); color: white;
+    padding: 10px 22px; border-radius: 100px;
+    text-decoration: none; font-size: 14px; font-weight: 600;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .nav-cta:hover { background: var(--green); transform: translateY(-1px); }
+
+  /* HERO */
+  .hero {
+    min-height: 60vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 120px 48px 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 60% at 80% 50%, rgba(200,151,58,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(200,151,58,0.1); color: var(--gold);
+    padding: 6px 14px; border-radius: 100px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.5px;
+    text-transform: uppercase; margin-bottom: 24px;
+    width: fit-content;
+  }
+  .hero-badge::before { content: '✦'; font-size: 10px; }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 5vw, 72px);
+    line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 24px;
+    max-width: 600px;
+  }
+  .hero p { font-size: 18px; line-height: 1.7; color: var(--text-muted); max-width: 560px; }
+
+  /* SECTION BASE */
+  section { padding: 100px 48px; }
+  .section-label {
+    display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 48px); letter-spacing: -1px;
+    line-height: 1.1; margin-bottom: 16px;
+  }
+  .section-sub { font-size: 16px; color: var(--text-muted); line-height: 1.7; max-width: 600px; margin-bottom: 40px; }
+
+  /* COMPARISON TABLE */
+  .table-container { overflow-x: auto; margin-bottom: 40px; }
+  .comparison-table {
+    width: 100%; border-collapse: collapse;
+    background: white; border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden;
+  }
+  .comparison-table th {
+    background: var(--dark); color: white; padding: 16px;
+    text-align: left; font-weight: 600; font-size: 14px;
+  }
+  .comparison-table td {
+    padding: 16px; border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  .comparison-table tr:last-child td { border-bottom: none; }
+  .comparison-table tr:hover { background: rgba(200,151,58,0.04); }
+  .badge-available {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(61,170,104,0.1); color: var(--green);
+    padding: 4px 10px; border-radius: 100px;
+    font-size: 12px; font-weight: 600;
+  }
+  .badge-available::before { content: '✓'; }
+  .badge-upon-request {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(200,151,58,0.1); color: var(--gold);
+    padding: 4px 10px; border-radius: 100px;
+    font-size: 12px; font-weight: 600;
+  }
+  .badge-upon-request::before { content: '○'; }
+  .badge-partial {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(193,59,42,0.1); color: var(--red);
+    padding: 4px 10px; border-radius: 100px;
+    font-size: 12px; font-weight: 600;
+  }
+  .badge-partial::before { content: '◐'; }
+
+  /* HOTELS SECTION */
+  .hotels-grid { display: grid; gap: 60px; }
+  .hotel-card {
+    background: white; border-radius: 16px; padding: 40px;
+    border: 1px solid var(--border);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .hotel-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.1); transform: translateY(-2px); }
+  .hotel-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; font-weight: 700; margin-bottom: 28px;
+    color: var(--dark); letter-spacing: -0.5px;
+  }
+  .hotel-section {
+    margin-bottom: 32px;
+  }
+  .hotel-section h3 {
+    font-size: 14px; font-weight: 700; text-transform: uppercase;
+    color: var(--gold); letter-spacing: 1px; margin-bottom: 12px;
+  }
+  .hotel-section p { font-size: 15px; line-height: 1.6; color: var(--text-muted); margin-bottom: 8px; }
+
+  .address-block { margin-bottom: 12px; }
+  .address-label { font-size: 12px; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.5px; }
+  .address-text { font-size: 15px; color: var(--dark); margin-top: 4px; }
+
+  .location-item {
+    display: flex; gap: 12px; margin-bottom: 10px; align-items: flex-start;
+  }
+  .location-icon { font-size: 16px; flex-shrink: 0; margin-top: 2px; }
+  .location-details { flex: 1; }
+  .location-name { font-size: 15px; font-weight: 500; color: var(--dark); }
+  .location-distance { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
+
+  .btn-amap {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--green-bright); color: white;
+    padding: 12px 24px; border-radius: 100px;
+    text-decoration: none; font-size: 14px; font-weight: 600;
+    transition: all 0.2s; border: none; cursor: pointer;
+  }
+  .btn-amap:hover { background: var(--green); transform: translateY(-1px); }
+
+  /* TIP SECTION */
+  .tip-section {
+    background: rgba(200,151,58,0.08); border-left: 4px solid var(--gold);
+    padding: 32px; border-radius: 8px; margin: 80px 0;
+  }
+  .tip-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; font-weight: 700; margin-bottom: 16px;
+    color: var(--dark);
+  }
+  .tip-section p { font-size: 16px; line-height: 1.7; color: var(--text-muted); }
+
+  /* CTA SECTION */
+  .cta-section {
+    background: white; border-radius: 16px; padding: 60px 48px;
+    text-align: center; border: 1px solid var(--border);
+  }
+  .cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 700; margin-bottom: 24px;
+    letter-spacing: -0.5px;
+  }
+  .cta-checklist {
+    text-align: left; display: inline-block; margin-bottom: 36px;
+  }
+  .cta-item {
+    display: flex; gap: 12px; margin-bottom: 12px;
+    font-size: 15px; color: var(--text-muted);
+  }
+  .cta-item::before { content: '✓'; color: var(--green-bright); font-weight: 700; flex-shrink: 0; }
+  .btn-whatsapp {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--green-bright); color: white;
+    padding: 16px 40px; border-radius: 100px;
+    text-decoration: none; font-size: 16px; font-weight: 600;
+    transition: all 0.2s; border: none; cursor: pointer;
+  }
+  .btn-whatsapp:hover { background: var(--green); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(61,170,104,0.3); }
+
+  /* FLOATING WHATSAPP */
+  .whatsapp-float {
+    position: fixed; bottom: 24px; right: 24px;
+    width: 60px; height: 60px;
+    background: var(--green-bright); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(61,170,104,0.4);
+    text-decoration: none; z-index: 99;
+    transition: all 0.2s;
+  }
+  .whatsapp-float:hover { transform: scale(1.1); }
+  .whatsapp-float svg { width: 28px; height: 28px; fill: white; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { gap: 16px; font-size: 13px; }
+    section { padding: 60px 24px; }
+    .hero { padding: 100px 24px 60px; }
+    .hotel-card { padding: 24px; }
+    .hotel-name { font-size: 22px; }
+    .cta-section { padding: 40px 24px; }
+    .comparison-table { font-size: 13px; }
+    .comparison-table th, .comparison-table td { padding: 12px; }
+  }
+</style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Guangzhou <span>Beyond</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html#services">Travel Services</a></li>
+      <li><a href="business.html">Business Travel</a></li>
+      <li><a href="index.html#guides">Guides</a></li>
+      <li><a href="#">Food & Spa</a></li>
+      <li><a href="#">Reviews</a></li>
+    </ul>
+    <a href="#cta" class="nav-cta">Contact Us</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">Halal Travel Guide</div>
+    <h1>Hotels With Halal Breakfast in Guangzhou</h1>
+    <p>Finding a hotel with halal breakfast in Guangzhou can be challenging, especially for first-time visitors. This guide features hotels that offer halal breakfast options or are located near halal restaurants, making it easier for Muslim travelers to enjoy a comfortable stay in Guangzhou.</p>
+  </section>
+
+  <!-- HOW WE CAN HELP SECTION -->
+  <section style="background: linear-gradient(135deg, rgba(61,170,104,0.08) 0%, rgba(200,151,58,0.06) 100%);">
+    <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+      <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(28px, 3vw, 42px); font-weight: 700; margin-bottom: 32px; letter-spacing: -0.5px;">How We Can Help Your Guangzhou Trip</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-bottom: 40px;">
+        <div style="text-align: left;">
+          <div style="font-size: 20px; margin-bottom: 8px;">🏨</div>
+          <h3 style="font-size: 15px; font-weight: 600; color: var(--dark); margin-bottom: 6px;">Hotels with Halal Breakfast</h3>
+          <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5;">Find hotels offering halal breakfast or located near halal restaurants.</p>
+        </div>
+        <div style="text-align: left;">
+          <div style="font-size: 20px; margin-bottom: 8px;">🍜</div>
+          <h3 style="font-size: 15px; font-weight: 600; color: var(--dark); margin-bottom: 6px;">Halal Restaurants & Dining</h3>
+          <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5;">Complete guides to halal restaurants and food across Guangzhou.</p>
+        </div>
+        <div style="text-align: left;">
+          <div style="font-size: 20px; margin-bottom: 8px;">✈️</div>
+          <h3 style="font-size: 15px; font-weight: 600; color: var(--dark); margin-bottom: 6px;">Airport Transfers</h3>
+          <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5;">Reliable airport pickups and local transportation support.</p>
+        </div>
+        <div style="text-align: left;">
+          <div style="font-size: 20px; margin-bottom: 8px;">🗺️</div>
+          <h3 style="font-size: 15px; font-weight: 600; color: var(--dark); margin-bottom: 6px;">Private Tours & Experiences</h3>
+          <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5;">Local guides and personalized experiences tailored to you.</p>
+        </div>
+        <div style="text-align: left;">
+          <div style="font-size: 20px; margin-bottom: 8px;">🏢</div>
+          <h3 style="font-size: 15px; font-weight: 600; color: var(--dark); margin-bottom: 6px;">Canton Fair Support</h3>
+          <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5;">Navigation, logistics, and business visit coordination.</p>
+        </div>
+        <div style="text-align: left;">
+          <div style="font-size: 20px; margin-bottom: 8px;">💬</div>
+          <h3 style="font-size: 15px; font-weight: 600; color: var(--dark); margin-bottom: 6px;">Business Interpreters</h3>
+          <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5;">Professional interpretation and business communication support.</p>
+        </div>
+      </div>
+
+      <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 28px; line-height: 1.7;">Our local team in Guangzhou is here to help. We understand the needs of Muslim travelers and can make your trip smoother and more enjoyable.</p>
+
+      <a href="https://wa.me/85255087775" style="display: inline-flex; align-items: center; gap: 10px; background: var(--green-bright); color: white; padding: 16px 40px; border-radius: 100px; text-decoration: none; font-size: 16px; font-weight: 600; transition: all 0.2s; box-shadow: 0 4px 16px rgba(61,170,104,0.3);">WhatsApp Us →</a>
+    </div>
+  </section>
+
+  <!-- QUICK COMPARISON TABLE -->
+  <section>
+    <div class="section-label">Quick Comparison</div>
+    <h2 class="section-title">Find Your Perfect Hotel</h2>
+    <p class="section-sub">Compare hotels with halal breakfast options and nearby halal restaurants at a glance.</p>
+
+    <div class="table-container">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Hotel Name</th>
+            <th>Area</th>
+            <th>Halal Breakfast</th>
+            <th>Nearby Halal Restaurants</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>The Garden Hotel Guangzhou</td>
+            <td>Tianhe</td>
+            <td><span class="badge-available">Available</span></td>
+            <td>5+</td>
+          </tr>
+          <tr>
+            <td>Asia International Hotel Guangdong</td>
+            <td>Yuexiu</td>
+            <td><span class="badge-available">Available</span></td>
+            <td>4+</td>
+          </tr>
+          <tr>
+            <td>Doya's Executive Apartment</td>
+            <td>Zhujiang New Town</td>
+            <td><span class="badge-upon-request">Upon Request</span></td>
+            <td>3+</td>
+          </tr>
+          <tr>
+            <td>Bene International Hotel</td>
+            <td>Zhujiang New Town</td>
+            <td><span class="badge-available">Available</span></td>
+            <td>3+</td>
+          </tr>
+          <tr>
+            <td>Guangzhou Rongjin Hotel</td>
+            <td>Yuexiu</td>
+            <td><span class="badge-available">Available</span></td>
+            <td>4+</td>
+          </tr>
+          <tr>
+            <td>Crown Plaza City Center</td>
+            <td>Tianhe</td>
+            <td><span class="badge-partial">Nearby Options</span></td>
+            <td>6+</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- HOTELS SECTION -->
+  <section id="hotels">
+    <div class="section-label">Detailed Guide</div>
+    <h2 class="section-title">Hotels in Guangzhou</h2>
+
+    <div class="hotels-grid">
+
+      <!-- HOTEL 1 -->
+      <div class="hotel-card">
+        <h2 class="hotel-name">The Garden Hotel Guangzhou</h2>
+
+        <div class="hotel-section">
+          <h3>Halal Breakfast</h3>
+          <div class="badge-available">Available</div>
+          <p style="margin-top: 12px;">Offers dedicated halal breakfast options daily. Staff is familiar with halal requirements and can accommodate dietary needs with advance notice.</p>
+        </div>
+
+        <div class="hotel-section">
+          <h3>Location</h3>
+          <div class="address-block">
+            <div class="address-label">English Address</div>
+            <div class="address-text">368 Huanshi Dong Road, Tianhe District</div>
+          </div>
+          <div class="address-block">
+            <div class="address-label">Chinese Address</div>
+            <div class="address-text">珠江新城冼村路38号</div>
+          </div>
+        </div>
+
+        <div class="hotel-section">
+          <h3>Nearest Metro Station</h3>
+          <div class="location-item">
+            <div class="location-icon">📍</div>
+            <div class="location-details">
+              <div class="location-name">Linhexi Station (Line 5)</div>
+              <div class="location-distance">8-minute walk</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hotel-section">
+          <h3>Nearby Halal Restaurants</h3>
+
+          <div style="margin-top: 16px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border);">
+            <div style="font-size: 13px; font-weight: 600; color: var(--gold); margin-bottom: 12px;">🚶 Walking 5-10 minutes:</div>
+            <div class="location-item">
+              <div class="location-icon">📍</div>
+              <div class="location-details">
+                <div class="location-name">艾米尔餐厅 (Amir Restaurant)</div>
+                <div class="location-distance">环市东路376号 (Huanshi East Rd) • 5-10 min walk</div>
+              </div>
+            </div>
+            <div class="location-item">
+              <div class="location-icon">📍</div>
+              <div class="location-details">
+                <div class="location-name">西北楼手工牛肉面</div>
+                <div class="location-distance">Guangshi Guesthouse • 5-10 min walk</div>
+              </div>
+            </div>
+            <div class="location-item">
+              <div class="location-icon">📍</div>
+              <div class="location-details">
+                <div class="location-name">铂斯西餐厅 (Pleace Western Restaurant)</div>
+                <div class="location-distance">环市东路301号2楼 • 5-10 min walk</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 12px;">
+            <div style="font-size: 13px; font-weight: 600; color: var(--gold); margin-bottom: 12px;">🚇 Metro 1 stop (小北 Xiaobei):</div>
+            <div class="location-item">
+              <div class="location-icon">📍</div>
+              <div class="location-details">
+                <div class="location-name">Sarlandt (萨兰德·新疆清真美食)</div>
+                <div class="location-distance">Baohang Street • Famous halal dining street</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hotel-section">
+          <a href="#" class="btn-amap">Open in Amap →</a>
+        </div>
+      </div>
+
+      <!-- HOTEL 2 -->
+      <div class="hotel-card">
+        <h2 class="hotel-name">Asia International Hotel Guangdong</h2>
+
+        <div class="hotel-section">
+          <h3>Halal Breakfast</h3>
+          <div class="badge-available">Available</div>
+          <p style="margin-top: 12px;">Offers halal breakfast with various options. Hotel has experience serving Muslim guests and can provide halal-certified meals.</p>
+        </div>
+
+        <div class="hotel-section">
+          <h3>Location</h3>
+          <div class="address-block">
+            <div class="address-label">English Address</div>
+            <div class="address-text">No. 9, Xunfanggang Road, Yuexiu District</div>
+          </div>
+          <div class="address-block">
+            <div class="address-label">Chinese Address</div>
+            <div class="address-text">越秀区寻坊港路9号</div>
+          </div>
+        </div>
+
+        <div class="hotel-section">
+          <h3>Nearest Metro Station</h3>
+          <div class="location-item">
+            <div class="location-icon">📍</div>
+            <div class="location-details">
+              <div class="location-name">Xiaobei Station (Line 5)</div>
+              <div class="location-distance">5-minute walk</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hotel-section">
+          <h3>Nearby Halal Restaurants</h3>
+          <div class="location-item">
+            <div class="location-icon">📍</div>
+            <div class="location-details">
+              <div class="location-name">牧陇园清真饭店 (Mulong Garden)</div>
+              <div class="location-distance">麓景路113号 • 5-10 min walk • Northwest cuisine</div>
+            </div>
+          </div>
+          <div class="location-item">
+            <div class="location-icon">📍</div>
+            <div class="location-details">
+              <div class="location-name">ZITONA·橄欖樹·黎凡特美食 (Mediterranean)</div>
+              <div class="location-distance">环市东路362-363号 • 5-10 min walk • Arabic/Levantine</div>
+            </div>
+          </div>
+          <div class="location-item">
+            <div class="location-icon">📍</div>
+            <div class="location-details">
+              <div class="location-name">马小火·高原现卤牛肉拉面</div>
+              <div class="location-distance">环市东路/区庄地铁站 • 10-15 min walk • Lanzhou noodles</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hotel-section">
+          <a href="#" class="btn-amap">Open in Amap →</a>
+        </div>
+      </div>
+
+      <!-- HOTEL 3 -->
+      <div class="hotel-card">
+        <h2 class="hotel-name">Doya's Executive Apartment</h2>
+
+        <div class="hotel-section">
+          <h3>Halal Breakfast</h3>
+          <div class="badge-upon-request">Available Upon Request</div>
+          <p style="margin-top: 12px;">Halal breakfast available upon advance request. Contact the hotel 24 hours before to arrange halal meals for your stay.</p>
+        </div>
+
+        <div class="hotel-section">
+          <h3>Location</h3>
+          <div class="address-block">
+            <div class="address-label">English Address</div>
+            <div class="address-text">Zhujiang New Town, Zhongshan Hospital Branch, Guangzhou</div>
+          </div>
+          <div class="address-block">
+            <div class="address-label">Chinese Address</div>
+            <div class="address-text">珠江新城中山医院店</div>
+          </div>
+        </div>
+
+        <div class="hotel-section">
+          <h3>Nearest Metro Station</h3>
+          <div class="location-item">
+            <div class="location-icon">📍</div>
+            <div class="location-details">
+              <div class="location-name">Linhexi Station (Line 5)</div>
+              <div class="location-distance">10-minute walk</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hotel-section">
+          <h3>Nearby Halal Restaurants</h3>
+          <div class="location-item">
+            <div class="location-icon">📍</div>
+            <div class="location-details">
+              <div class="location-name">清真兰州拉面 (Lanzhou Noodles)</div>
+              <div class="location-distance">兴盛路10号隽峰苑2楼 • 600m • 8-12 min walk</div>
+            </div>
+          </div>
+          <div class="location-item">
+            <div class="location-icon">📍</div>
+            <div class="location-details">
+              <div class="location-name">新粤穆斯林餐厅 (Xinyue Muslim)</div>
+              <div class="location-distance">体育西路191号佳兆业广场F3 • 1km • 12-15 min walk</div>
+            </div>
+          </div>
+          <div class="location-item">
+            <div class="location-icon">📍</div>
+            <div class="location-details">
+              <div class="location-name">羊之道·草原小馆 (Yangzhidao)</div>
+              <div class="location-distance">寺右一马路10号 • 1.1km • 15-20 min walk</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hotel-section">
+          <a href="#" class="btn-amap">Open in Amap →</a>
+        </div>
+      </div>
+
+      <!-- HOTEL 4 -->
+      <div class="hotel-card">
+        <h2 class="hotel-name">Bene International Hotel</h2>
+
+        <div class="hotel-section">
+          <h3>Halal Breakfast</h3>
+          <div class="badge-available">Available</div>
+          <p style="margin-top: 12px;">Offers halal breakfast options daily. Located in business district with experience serving international Muslim travelers.</p>
+        </div>
+
+        <div class="hotel-section">
+          <h3>Location</h3>
+          <div class="address-block">
+            <div class="address-label">English Address</div>
+            <div class="address-text">Zhujiang New Town, US Consulate Area, Guangzhou</div>
+          </div>
+          <div class="address-block">
+            <div class="address-label">Chinese Address</div>
+            <div class="address-text">珠江新天地美国领事馆分店</div>
+          </div>
+        </div>
+
+        <div class="hotel-section">
+          <h3>Nearest Metro Station</h3>
+          <div class="location-item">
+            <div class="location-icon">📍</div>
+            <div class="location-details">
+              <div class="location-name">Linhexi Station (Line 5)</div>
+              <div class="location-distance">12-minute walk</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hotel-section">
+          <h3>Nearby Halal Restaurants</h3>
+          <div class="location-item">
+            <div class="location-icon">📍</div>
+            <div class="location-details">
+              <div class="location-name">清真兰州拉面 (Lanzhou Noodles)</div>
+              <div class="location-distance">兴盛路10号隽峰苑2楼 • 8-12 min walk • ¥20-35</div>
+            </div>
+          </div>
+          <div class="location-item">
+            <div class="location-icon">📍</div>
+            <div class="location-details">
+              <div class="location-name">新粤穆斯林餐厅 (Xinyue Muslim Xinjiang)</div>
+              <div class="location-distance">天河北路76号新疆大厦3楼 • 12-15 min walk • ¥90-150</div>
+            </div>
+          </div>
+          <div class="location-item">
+            <div class="location-icon">📍</div>
+            <div class="location-details">
+              <div class="location-name">赛俩目餐厅 (Salam Restaurant)</div>
+              <div class="location-distance">环市东路475号东都大世界食街 • 打车15分钟</div>
+            </div>
+          </div>
+          <div class="location-item">
+            <div class="location-icon">📍</div>
+            <div class="location-details">
+              <div class="location-name">广州回民饭店 (Guangzhou Muslim)</div>
+              <div class="location-distance">中山六路325号 • 打车15分钟 • ¥70</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hotel-section">
+          <a href="#" class="btn-amap">Open in Amap →</a>
+        </div>
+      </div>
+
+      <!-- HOTEL 5 -->
+      <div class="hotel-card">
+        <h2 class="hotel-name">Guangzhou Rongjin Hotel</h2>
+
+        <div class="hotel-section">
+          <h3>Halal Breakfast</h3>
+          <div class="badge-available">Available</div>
+          <p style="margin-top: 12px;">Offers halal breakfast daily. Hotel staff can provide guidance on nearby halal restaurants and Muslim-friendly facilities.</p>
+        </div>
+
+        <div class="hotel-section">
+          <h3>Location</h3>
+          <div class="address-block">
+            <div class="address-label">English Address</div>
+            <div class="address-text">No.76 Tianhe North Road, Tian He, 510000 Guangzhou</div>
+          </div>
+          <div class="address-block">
+            <div class="address-label">Chinese Address</div>
+            <div class="address-text">越秀区荣金酒店</div>
+          </div>
+        </div>
+
+        <div class="hotel-section">
+          <h3>Nearest Metro Station</h3>
+          <div class="location-item">
+            <div class="location-icon">📍</div>
+            <div class="location-details">
+              <div class="location-name">Xiaobei Station (Line 5)</div>
+              <div class="location-distance">7-minute walk</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hotel-section">
+          <h3>Nearby Halal Restaurants</h3>
+          <div class="location-item">
+            <div class="location-icon">📍</div>
+            <div class="location-details">
+              <div class="location-name">新粤穆斯林餐厅 (Xinyue Muslim Xinjiang)</div>
+              <div class="location-distance">天河区体育西路191号佳兆业广场F3层 • 步行10分钟（约700米） / 打车7分钟</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hotel-section">
+          <a href="#" class="btn-amap">Open in Amap →</a>
+        </div>
+      </div>
+
+      <!-- HOTEL 6 -->
+      <div class="hotel-card">
+        <h2 class="hotel-name">Crown Plaza City Center</h2>
+
+        <div class="hotel-section">
+          <h3>Halal Breakfast</h3>
+          <div class="badge-partial">Selected Halal Options Available</div>
+          <p style="margin-top: 12px;">While the hotel does not offer dedicated halal breakfast, it has excellent access to numerous halal restaurants in the nearby area. Perfect for exploring diverse dining options.</p>
+        </div>
+
+        <div class="hotel-section">
+          <h3>Location</h3>
+          <div class="address-block">
+            <div class="address-label">English Address</div>
+            <div class="address-text">Tianhe District, City Center, Guangzhou</div>
+          </div>
+          <div class="address-block">
+            <div class="address-label">Chinese Address</div>
+            <div class="address-text">天河区城市中心皇冠假日酒店</div>
+          </div>
+        </div>
+
+        <div class="hotel-section">
+          <h3>Nearest Metro Station</h3>
+          <div class="location-item">
+            <div class="location-icon">📍</div>
+            <div class="location-details">
+              <div class="location-name">Linhexi Station (Line 5)</div>
+              <div class="location-distance">6-minute walk</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hotel-section">
+          <h3>Nearby Halal Restaurants</h3>
+          <div class="location-item">
+            <div class="location-icon">📍</div>
+            <div class="location-details">
+              <div class="location-name">伊尚宫 (Yi Shang Gong)</div>
+              <div class="location-distance">步行10分钟 • Guangzhou dim sum before 11:30am</div>
+            </div>
+          </div>
+          <div class="location-item">
+            <div class="location-icon">📍</div>
+            <div class="location-details">
+              <div class="location-name">萨兰德·新疆清真美食 (Sarlandt Xinjiang - Xiaobei Branch)</div>
+              <div class="location-distance">打车10分钟 • Famous halal dining street</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hotel-section">
+          <a href="#" class="btn-amap">Open in Amap →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TIP SECTION -->
+  <section>
+    <div class="tip-section">
+      <h2>Guangzhou Muslim Travel Tip</h2>
+      <p>Many Muslim travelers choose hotels near <strong>Xiaobei</strong> because it is one of Guangzhou's most popular areas for halal restaurants, Middle Eastern cuisine, and international communities. If halal food accessibility is important during your stay, consider selecting a hotel within walking distance of this area. You'll find numerous dining options, prayer facilities, and a welcoming community.</p>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section id="cta">
+    <div class="cta-section">
+      <h2>Need Help Planning Your Stay in Guangzhou?</h2>
+
+      <div class="cta-checklist">
+        <div class="cta-item">Hotels with halal breakfast</div>
+        <div class="cta-item">Halal restaurants and dining guides</div>
+        <div class="cta-item">Airport transfers and transportation</div>
+        <div class="cta-item">Private tours and local experiences</div>
+        <div class="cta-item">Canton Fair visits and support</div>
+        <div class="cta-item">Business interpreters and guides</div>
+      </div>
+
+      <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto;">Our local team is happy to help. We're Guangzhou locals and can help make your trip smoother and more enjoyable.</p>
+
+      <a href="https://wa.me/85255087775" class="btn-whatsapp">WhatsApp Us</a>
+    </div>
+  </section>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/85255087775" class="whatsapp-float" title="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.255.949c-1.238.503-2.335 1.236-3.22 2.121-.885.885-1.618 1.982-2.121 3.22a9.9 9.9 0 00-.6 2.81 9.88 9.88 0 00.122 2.908c.077.46.233.902.451 1.312.006.013.012.027.02.04a9.884 9.884 0 002.064 3.411l.087.09a9.9 9.9 0 001.47 1.338c.897.545 1.798.927 2.63 1.129a9.9 9.9 0 004.59-.098l4.751-1.188a9.897 9.897 0 003.331-1.62 9.88 9.88 0 002.064-3.411c.218-.41.374-.852.451-1.312a9.88 9.88 0 00.122-2.908 9.87 9.87 0 00-.6-2.81c-.503-1.238-1.236-2.335-2.121-3.22-.885-.885-1.982-1.618-3.22-2.121a9.87 9.87 0 00-2.81-.6 9.88 9.88 0 00-2.908.122m5.064 18.057a11.852 11.852 0 01-7.46 0C6.102 23.421 3.712 22.998 1.58 21.956a11.853 11.853 0 01-3.154-2.313A11.852 11.852 0 01-3.04 16.3a11.853 11.853 0 01-.882-4.59c0-1.558.3-3.09.882-4.59 1.041-2.132 2.465-4.03 4.28-5.595a11.85 11.85 0 013.154-2.313 11.851 11.851 0 014.59-.882c1.558 0 3.09.3 4.59.882 2.132 1.041 4.03 2.465 5.595 4.28a11.85 11.85 0 012.313 3.154 11.851 11.851 0 01.882 4.59"/>
+    </svg>
+  </a>
+
+</body>
+</html>

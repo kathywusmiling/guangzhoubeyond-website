@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best Halal Restaurants in Guangzhou (2026 Guide)</title>
+<meta name="description" content="Discover the best halal restaurants in Guangzhou with photos, hours, and addresses. Guide for Muslim travelers and business visitors.">
+<meta name="keywords" content="halal restaurants Guangzhou, Muslim food, Islamic cuisine, halal dining">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF7F2;
+    --dark: #0F0F0F;
+    --gold: #C8973A;
+    --gold-light: #E8B85C;
+    --green: #2A7A4B;
+    --green-bright: #3DAA68;
+    --red: #C13B2A;
+    --text-muted: #6B6560;
+    --card-bg: #FFFFFF;
+    --border: #E8E3DC;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--dark); overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 48px;
+    background: rgba(250,247,242,0.92); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--dark); font-size: 14px; font-weight: 500; opacity: 0.7; transition: opacity 0.2s; }
+  .nav-links a:hover { opacity: 1; }
+  .nav-cta {
+    background: var(--green-bright); color: white;
+    padding: 10px 22px; border-radius: 100px;
+    text-decoration: none; font-size: 14px; font-weight: 600;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .nav-cta:hover { background: var(--green); transform: translateY(-1px); }
+
+  /* HERO */
+  .hero {
+    min-height: 60vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 120px 48px 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 60% at 80% 50%, rgba(200,151,58,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(200,151,58,0.1); color: var(--gold);
+    padding: 6px 14px; border-radius: 100px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.5px;
+    text-transform: uppercase; margin-bottom: 24px;
+    width: fit-content;
+  }
+  .hero-badge::before { content: '✦'; font-size: 10px; }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 5vw, 72px);
+    line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 24px;
+    max-width: 600px;
+  }
+  .hero p { font-size: 18px; line-height: 1.7; color: var(--text-muted); max-width: 560px; }
+
+  /* SECTION BASE */
+  section { padding: 100px 48px; }
+  .section-label {
+    display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 48px); letter-spacing: -1px;
+    line-height: 1.1; margin-bottom: 16px;
+  }
+  .section-sub { font-size: 16px; color: var(--text-muted); line-height: 1.7; max-width: 600px; margin-bottom: 40px; }
+
+  /* QUICK LIST TABLE */
+  .table-container { overflow-x: auto; margin-bottom: 40px; }
+  .restaurants-table {
+    width: 100%; border-collapse: collapse;
+    background: white; border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden;
+  }
+  .restaurants-table th {
+    background: var(--dark); color: white; padding: 16px;
+    text-align: left; font-weight: 600; font-size: 14px;
+  }
+  .restaurants-table td {
+    padding: 16px; border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  .restaurants-table tr:last-child td { border-bottom: none; }
+  .restaurants-table tr:hover { background: rgba(200,151,58,0.04); }
+  .cuisine-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(61,170,104,0.1); color: var(--green);
+    padding: 4px 10px; border-radius: 100px;
+    font-size: 12px; font-weight: 600;
+  }
+
+  /* RESTAURANT CARDS */
+  .restaurants-grid { display: grid; gap: 80px; margin-top: 60px; }
+  .restaurant-card {
+    background: white; border-radius: 16px; overflow: hidden;
+    border: 1px solid var(--border);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .restaurant-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.1); transform: translateY(-2px); }
+
+  .restaurant-header { padding: 40px; }
+  .restaurant-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px; font-weight: 700; margin-bottom: 8px;
+    color: var(--dark); letter-spacing: -0.5px;
+  }
+  .restaurant-chinese {
+    font-size: 18px; color: var(--gold); margin-bottom: 24px;
+    font-weight: 600;
+  }
+
+  /* IMAGE GALLERY */
+  .restaurant-gallery {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 12px; margin-bottom: 40px;
+  }
+  .gallery-img {
+    width: 100%; height: 240px; background: var(--cream);
+    border-radius: 12px; overflow: hidden; position: relative;
+  }
+  .gallery-img img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .gallery-placeholder {
+    display: flex; align-items: center; justify-content: center;
+    font-size: 48px; color: rgba(0,0,0,0.1);
+  }
+
+  /* RESTAURANT DETAILS */
+  .restaurant-details {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 32px; padding: 0 40px 40px;
+  }
+  .detail-block { }
+  .detail-label {
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    color: var(--gold); letter-spacing: 1px; margin-bottom: 12px;
+  }
+  .detail-value {
+    font-size: 16px; color: var(--dark); line-height: 1.6; font-weight: 500;
+  }
+  .address-text { font-size: 14px; color: var(--text-muted); margin-top: 6px; }
+
+  .hours-display {
+    font-size: 18px; font-weight: 600; color: var(--green-bright); margin-bottom: 8px;
+  }
+  .hours-note {
+    font-size: 12px; color: var(--text-muted);
+  }
+
+  .btn-amap {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--green-bright); color: white;
+    padding: 12px 24px; border-radius: 100px;
+    text-decoration: none; font-size: 14px; font-weight: 600;
+    transition: all 0.2s; border: none; cursor: pointer;
+  }
+  .btn-amap:hover { background: var(--green); transform: translateY(-1px); }
+
+  /* HOW WE CAN HELP SECTION */
+  .help-section {
+    background: linear-gradient(135deg, rgba(61,170,104,0.08) 0%, rgba(200,151,58,0.06) 100%);
+  }
+  .help-container { max-width: 900px; margin: 0 auto; text-align: center; }
+  .help-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3vw, 42px); font-weight: 700; margin-bottom: 32px;
+    letter-spacing: -0.5px;
+  }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px; margin-bottom: 40px;
+  }
+  .service-item { text-align: left; }
+  .service-icon { font-size: 20px; margin-bottom: 8px; }
+  .service-title {
+    font-size: 15px; font-weight: 600; color: var(--dark);
+    margin-bottom: 6px;
+  }
+  .service-desc {
+    font-size: 13px; color: var(--text-muted); line-height: 1.5;
+  }
+
+  /* CTA SECTION */
+  .cta-section {
+    background: white; border-radius: 16px; padding: 60px 48px;
+    text-align: center; border: 1px solid var(--border);
+  }
+  .cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 700; margin-bottom: 24px;
+    letter-spacing: -0.5px;
+  }
+  .cta-checklist {
+    text-align: left; display: inline-block; margin-bottom: 36px;
+  }
+  .cta-item {
+    display: flex; gap: 12px; margin-bottom: 12px;
+    font-size: 15px; color: var(--text-muted);
+  }
+  .cta-item::before { content: '✓'; color: var(--green-bright); font-weight: 700; flex-shrink: 0; }
+  .btn-whatsapp {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--green-bright); color: white;
+    padding: 16px 40px; border-radius: 100px;
+    text-decoration: none; font-size: 16px; font-weight: 600;
+    transition: all 0.2s; border: none; cursor: pointer;
+  }
+  .btn-whatsapp:hover { background: var(--green); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(61,170,104,0.3); }
+
+  /* FLOATING WHATSAPP */
+  .whatsapp-float {
+    position: fixed; bottom: 24px; right: 24px;
+    width: 60px; height: 60px;
+    background: var(--green-bright); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(61,170,104,0.4);
+    text-decoration: none; z-index: 99;
+    transition: all 0.2s;
+  }
+  .whatsapp-float:hover { transform: scale(1.1); }
+  .whatsapp-float svg { width: 28px; height: 28px; fill: white; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { gap: 16px; font-size: 13px; }
+    section { padding: 60px 24px; }
+    .hero { padding: 100px 24px 60px; }
+    .restaurant-gallery { grid-template-columns: 1fr; }
+    .gallery-img { height: 280px; }
+    .restaurant-details { grid-template-columns: 1fr; }
+    .restaurant-header, .restaurant-details { padding-left: 24px; padding-right: 24px; }
+    .cta-section { padding: 40px 24px; }
+    .restaurants-table { font-size: 13px; }
+    .restaurants-table th, .restaurants-table td { padding: 12px; }
+  }
+</style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Guangzhou <span>Beyond</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html#services">Travel Services</a></li>
+      <li><a href="business.html">Business Travel</a></li>
+      <li><a href="index.html#guides">Guides</a></li>
+      <li><a href="#">Food & Spa</a></li>
+      <li><a href="#">Reviews</a></li>
+    </ul>
+    <a href="https://wa.me/85255087775" target="_blank" class="nav-cta">Contact Us</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">Halal Food Guide</div>
+    <h1>Best Halal Restaurants in Guangzhou</h1>
+    <p>Finding halal food in Guangzhou can be challenging for first-time visitors. This guide features some of the best halal restaurants in Guangzhou, including photos, opening hours, and addresses. Whether you're visiting for tourism, business, or the Canton Fair, these restaurants are popular choices among Muslim travelers and locals alike.</p>
+  </section>
+
+  <!-- QUICK RESTAURANT LIST -->
+  <section>
+    <div class="section-label">Quick Reference</div>
+    <h2 class="section-title">Find a Restaurant Fast</h2>
+    <p class="section-sub">Browse all halal restaurants in Guangzhou and find your next meal.</p>
+
+    <div class="table-container">
+      <table class="restaurants-table">
+        <thead>
+          <tr>
+            <th>Restaurant</th>
+            <th>Chinese Name</th>
+            <th>Area</th>
+            <th>Opening Hours</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Casavilla</td>
+            <td>卡萨维拉摩洛哥餐厅</td>
+            <td>Yuexiu</td>
+            <td>12:00 PM – 2:00 AM</td>
+          </tr>
+          <tr>
+            <td>Cà Haha Café</td>
+            <td>茶哈哪餐厅·乌兹别克</td>
+            <td>Xicun</td>
+            <td>10:00 AM – 12:00 AM</td>
+          </tr>
+          <tr>
+            <td>Sarlandt</td>
+            <td>萨兰德·新疆清真美食</td>
+            <td>Xiaobei</td>
+            <td>11:00 AM – 10:00 PM</td>
+          </tr>
+          <tr>
+            <td>Huimin Restaurant</td>
+            <td>回民饭店·粤派清真菜</td>
+            <td>Ximen</td>
+            <td>7:00 AM – 9:00 PM</td>
+          </tr>
+          <tr>
+            <td>Yi Shang Gong</td>
+            <td>伊尚宫·清真广式早茶·韩式烤肉·火锅</td>
+            <td>Xiaobei</td>
+            <td>7:00 AM – 1:00 AM</td>
+          </tr>
+          <tr>
+            <td>Babaerhan</td>
+            <td>巴巴尔罕新疆清真餐厅</td>
+            <td>Liwan</td>
+            <td>11:00 AM – 2:00 PM, 4:30 PM – 10:00 PM</td>
+          </tr>
+          <tr>
+            <td>Xinjiang Yixiu</td>
+            <td>新疆伊秀清真餐厅</td>
+            <td>Liwan</td>
+            <td>10:00 AM – 10:00 PM</td>
+          </tr>
+          <tr>
+            <td>Silk Road Banquet</td>
+            <td>丝路宴·西域乐章·新疆美食</td>
+            <td>Tianhe</td>
+            <td>7:30 AM – 2:00 PM, 5:00 PM – 9:30 PM</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- RESTAURANTS SECTION -->
+  <section id="restaurants">
+    <div class="section-label">Detailed Guides</div>
+    <h2 class="section-title">Explore Our Favorite Halal Restaurants</h2>
+
+    <div class="restaurants-grid">
+
+      <!-- RESTAURANT 1 -->
+      <div class="restaurant-card">
+        <div class="restaurant-header">
+          <div class="restaurant-name">Casavilla</div>
+          <div class="restaurant-chinese">卡萨维拉摩洛哥餐厅清真</div>
+          <div style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">⭐ 4.1 (159 reviews) • ¥120 per person</div>
+        </div>
+
+        <div class="restaurant-gallery">
+          <div class="gallery-img">
+            <img src="restaurant-images/casavilla/IMG_3394.JPG" alt="Moroccan dish">
+          </div>
+          <div class="gallery-img">
+            <img src="restaurant-images/casavilla/IMG_3395.PNG" alt="Moroccan specialty">
+          </div>
+          <div class="gallery-img">
+            <img src="restaurant-images/casavilla/IMG_3396.jpg" alt="Restaurant signature dish">
+          </div>
+        </div>
+
+        <div class="restaurant-details">
+          <div class="detail-block">
+            <div class="detail-label">Opening Hours</div>
+            <div class="hours-display">12:00 PM – 2:00 AM</div>
+            <div class="hours-note">Open daily (Late night)</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Cuisine Type</div>
+            <div class="detail-value">Moroccan & Islamic</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">English Address</div>
+            <div class="detail-value">No. 3 Hongtuguo Road, Huaqiao New Village</div>
+            <div class="address-text">Yuexiu District</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Chinese Address</div>
+            <div class="detail-value">广州市越秀区华侨新村宏图国路3号</div>
+            <div class="address-text">距光明路与平板交叉150m</div>
+          </div>
+        </div>
+
+        <div style="padding: 0 40px 40px; display: flex; gap: 12px;">
+          <a href="https://surl.amap.com/g3pICM6N0aO" target="_blank" class="btn-amap">Open in Amap →</a>
+        </div>
+      </div>
+
+      <!-- RESTAURANT 2 -->
+      <div class="restaurant-card">
+        <div class="restaurant-header">
+          <div class="restaurant-name">Cà Haha Café</div>
+          <div class="restaurant-chinese">茶哈哪餐厅·乌兹别克美食·清真(西村店)</div>
+          <div style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">⭐ 4.0 (44 reviews) • ¥108 per person</div>
+        </div>
+
+        <div class="restaurant-gallery">
+          <div class="gallery-img">
+            <img src="restaurant-images/茶哈哪餐厅/IMG_3403.jpg" alt="Uzbek dish">
+          </div>
+          <div class="gallery-img">
+            <img src="restaurant-images/茶哈哪餐厅/IMG_3404.jpg" alt="Traditional food">
+          </div>
+          <div class="gallery-img">
+            <img src="restaurant-images/茶哈哪餐厅/IMG_3405.jpg" alt="Restaurant specialty">
+          </div>
+        </div>
+
+        <div class="restaurant-details">
+          <div class="detail-block">
+            <div class="detail-label">Opening Hours</div>
+            <div class="hours-display">10:00 AM – 12:00 AM</div>
+            <div class="hours-note">Open daily</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Cuisine Type</div>
+            <div class="detail-value">Uzbek & Islamic</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">English Address</div>
+            <div class="detail-value">No. 103 Zhanqian Road, Xicun</div>
+            <div class="address-text">Near Guangzhou West Station (780m walk)</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Chinese Address</div>
+            <div class="detail-value">广州市站前路103号</div>
+            <div class="address-text">距广州西站步行780m</div>
+          </div>
+        </div>
+
+        <div style="padding: 0 40px 40px; display: flex; gap: 12px;">
+          <a href="https://surl.amap.com/8CBVNBY19eMc" target="_blank" class="btn-amap">Open in Amap →</a>
+        </div>
+      </div>
+
+      <!-- RESTAURANT 3 -->
+      <div class="restaurant-card">
+        <div class="restaurant-header">
+          <div class="restaurant-name">Sarlandt</div>
+          <div class="restaurant-chinese">萨兰德·新疆清真美食(小北店第一店)</div>
+          <div style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">⭐ 4.4 (6433 reviews) • ¥54 per person</div>
+        </div>
+
+        <div class="restaurant-gallery">
+          <div class="gallery-img">
+            <img src="restaurant-images/萨兰德/IMG_3400.jpg" alt="Xinjiang lamb">
+          </div>
+          <div class="gallery-img">
+            <img src="restaurant-images/萨兰德/IMG_3401.jpg" alt="Hand-pulled noodles">
+          </div>
+          <div class="gallery-img">
+            <img src="restaurant-images/萨兰德/IMG_3402.jpg" alt="Traditional Xinjiang dish">
+          </div>
+        </div>
+
+        <div class="restaurant-details">
+          <div class="detail-block">
+            <div class="detail-label">Opening Hours</div>
+            <div class="hours-display">11:00 AM – 10:00 PM</div>
+            <div class="hours-note">Open daily</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Cuisine Type</div>
+            <div class="detail-value">Xinjiang & Islamic</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">🌟 Multiple Locations</div>
+            <div class="detail-value" style="color: var(--green-bright); font-weight: 600;">Multiple branches across Guangzhou</div>
+            <div class="address-text">Search for "萨兰德" on Amap to find the nearest branch near you</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">English Address</div>
+            <div class="detail-value">Xiaobei, Yuexiu District, Guangzhou</div>
+            <div class="address-text">Popular halal area with many restaurants</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Chinese Address</div>
+            <div class="detail-value">广州市越秀区小北</div>
+            <div class="address-text">萨兰德新疆清真美食</div>
+          </div>
+        </div>
+
+        <div style="padding: 0 40px 40px; display: flex; gap: 12px;">
+          <a href="https://surl.amap.com/5OsUA7c1x4Rr" target="_blank" class="btn-amap">Open in Amap →</a>
+        </div>
+      </div>
+
+      <!-- RESTAURANT 4 -->
+      <div class="restaurant-card">
+        <div class="restaurant-header">
+          <div class="restaurant-name">Huimin Restaurant</div>
+          <div class="restaurant-chinese">回民饭店·粤派清真菜(西门口店)</div>
+          <div style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">⭐ 3.8 (765 reviews) • ¥81 per person</div>
+        </div>
+
+        <div class="restaurant-gallery">
+          <div class="gallery-img">
+            <img src="restaurant-images/回民饭店/IMG_3397.jpg" alt="Cantonese halal dim sum">
+          </div>
+          <div class="gallery-img">
+            <img src="restaurant-images/回民饭店/IMG_3398.jpg" alt="Traditional dish">
+          </div>
+          <div class="gallery-img">
+            <img src="restaurant-images/回民饭店/IMG_3399.jpg" alt="Restaurant specialty">
+          </div>
+        </div>
+
+        <div class="restaurant-details">
+          <div class="detail-block">
+            <div class="detail-label">Opening Hours</div>
+            <div class="hours-display">7:00 AM – 9:00 PM</div>
+            <div class="hours-note">Open daily (Breakfast served)</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Cuisine Type</div>
+            <div class="detail-value">Cantonese & Islamic</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">English Address</div>
+            <div class="detail-value">No. 325 Zhongshan Road 6, Liwan District</div>
+            <div class="address-text">Near Ximen Station (790m walk)</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Chinese Address</div>
+            <div class="detail-value">广州市荔湾区中山六路325号</div>
+            <div class="address-text">距地铁1号线西门站口步行790m</div>
+          </div>
+        </div>
+
+        <div style="padding: 0 40px 40px; display: flex; gap: 12px;">
+          <a href="https://surl.amap.com/fehtSJs1v7is" target="_blank" class="btn-amap">Open in Amap →</a>
+        </div>
+      </div>
+
+      <!-- RESTAURANT 5 -->
+      <div class="restaurant-card">
+        <div class="restaurant-header">
+          <div class="restaurant-name">Yi Shang Gong</div>
+          <div class="restaurant-chinese">伊尚宫·清真广式早茶·韩式烤肉·火锅</div>
+          <div style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">⭐ 4.0 (813 reviews) • ¥79 per person</div>
+        </div>
+
+        <div class="restaurant-gallery">
+          <div class="gallery-img">
+            <img src="restaurant-images/伊尚宫/IMG_3412.jpg" alt="Korean BBQ and hotpot">
+          </div>
+          <div class="gallery-img">
+            <img src="restaurant-images/伊尚宫/IMG_3413.jpg" alt="Cantonese dim sum">
+          </div>
+          <div class="gallery-img">
+            <img src="restaurant-images/伊尚宫/IMG_3414.jpg" alt="Specialty dish">
+          </div>
+        </div>
+
+        <div class="restaurant-details">
+          <div class="detail-block">
+            <div class="detail-label">Opening Hours</div>
+            <div class="hours-display">7:00 AM – 1:00 AM</div>
+            <div class="hours-note">Open daily (Breakfast & late night)</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Cuisine Type</div>
+            <div class="detail-value">Cantonese Dim Sum, Korean BBQ & Hotpot</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">🔥 Chinese Hotpot Note</div>
+            <div class="detail-value" style="color: var(--green-bright); font-weight: 600;">Traditional Chinese Hotpot Available</div>
+            <div class="address-text">Cook your own hotpot with fresh vegetables and meat at your table</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">English Address</div>
+            <div class="detail-value">No. 304 Huanshi Road, Gao Gui Building</div>
+            <div class="address-text">Xiaobei, near Metro Line 5 (80m walk)</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Chinese Address</div>
+            <div class="detail-value">环市中路304号靠贵大厦2楼</div>
+            <div class="address-text">距地铁5号线小北站A口步行80m</div>
+          </div>
+        </div>
+
+        <div style="padding: 0 40px 40px; display: flex; gap: 12px;">
+          <a href="https://surl.amap.com/W0t7Vg1p8aH" target="_blank" class="btn-amap">Open in Amap →</a>
+        </div>
+      </div>
+
+      <!-- RESTAURANT 6 -->
+      <div class="restaurant-card">
+        <div class="restaurant-header">
+          <div class="restaurant-name">Babaerhan</div>
+          <div class="restaurant-chinese">巴巴尔罕新疆清真餐厅（中山大道店）</div>
+          <div style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">⭐ 4.6 (2376 reviews) • ¥59 per person</div>
+        </div>
+
+        <div class="restaurant-gallery">
+          <div class="gallery-img">
+            <img src="restaurant-images/巴巴尔罕/IMG_3409.jpg" alt="Xinjiang lamb skewers">
+          </div>
+          <div class="gallery-img">
+            <img src="restaurant-images/巴巴尔罕/IMG_3410.jpg" alt="Hand-pulled noodles">
+          </div>
+          <div class="gallery-img">
+            <img src="restaurant-images/巴巴尔罕/IMG_3411.jpg" alt="Traditional Xinjiang dish">
+          </div>
+        </div>
+
+        <div class="restaurant-details">
+          <div class="detail-block">
+            <div class="detail-label">Opening Hours</div>
+            <div class="hours-display">11:00 AM – 2:00 PM, 4:30 PM – 10:00 PM</div>
+            <div class="hours-note">Lunch & dinner (Closed 2-4:30pm)</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Cuisine Type</div>
+            <div class="detail-value">Xinjiang & Islamic</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">English Address</div>
+            <div class="detail-value">No. 108 Rongbao Road, Liwan District</div>
+            <div class="address-text">Near Metro Line 4 Station (750m walk)</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Chinese Address</div>
+            <div class="detail-value">荣宝路向路1号108室</div>
+            <div class="address-text">距地铁4号线城际站C口750m</div>
+          </div>
+        </div>
+
+        <div style="padding: 0 40px 40px; display: flex; gap: 12px;">
+          <a href="https://surl.amap.com/glLDqr81q8aw" target="_blank" class="btn-amap">Open in Amap →</a>
+        </div>
+      </div>
+
+      <!-- RESTAURANT 7 -->
+      <div class="restaurant-card">
+        <div class="restaurant-header">
+          <div class="restaurant-name">Xinjiang Yixiu</div>
+          <div class="restaurant-chinese">新疆伊秀清真餐厅</div>
+          <div style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">⭐ 4.0 (401 reviews) • ¥73 per person</div>
+        </div>
+
+        <div class="restaurant-gallery">
+          <div class="gallery-img">
+            <img src="restaurant-images/新疆伊秀清真/IMG_3406.jpg" alt="Roasted lamb">
+          </div>
+          <div class="gallery-img">
+            <img src="restaurant-images/新疆伊秀清真/IMG_3407.jpg" alt="Xinjiang cuisine">
+          </div>
+          <div class="gallery-img">
+            <img src="restaurant-images/新疆伊秀清真/IMG_3408.jpg" alt="Restaurant specialty">
+          </div>
+        </div>
+
+        <div class="restaurant-details">
+          <div class="detail-block">
+            <div class="detail-label">Opening Hours</div>
+            <div class="hours-display">10:00 AM – 10:00 PM</div>
+            <div class="hours-note">Open daily</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Cuisine Type</div>
+            <div class="detail-value">Xinjiang & Islamic</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">English Address</div>
+            <div class="detail-value">No. 188 Zhongshan Road, Food Street, Liwan District</div>
+            <div class="address-text">Near Chaxiacun Bus Station (90m walk)</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Chinese Address</div>
+            <div class="detail-value">中山大道沿德尔巴前广场美食街188号（茶下南侧）</div>
+            <div class="address-text">距茶下村公交站步行90m</div>
+          </div>
+        </div>
+
+        <div style="padding: 0 40px 40px; display: flex; gap: 12px;">
+          <a href="https://surl.amap.com/dYBvplc1b4DW" target="_blank" class="btn-amap">Open in Amap →</a>
+        </div>
+      </div>
+
+      <!-- RESTAURANT 8 -->
+      <div class="restaurant-card">
+        <div class="restaurant-header">
+          <div class="restaurant-name">Silk Road Banquet</div>
+          <div class="restaurant-chinese">丝路宴·西域乐章·新疆美食（新疆大厦店）</div>
+          <div style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">⭐ 3.9 (387 reviews) • ¥81 per person</div>
+        </div>
+
+        <div class="restaurant-gallery">
+          <div class="gallery-img">
+            <img src="restaurant-images/丝路宴/IMG_3416.jpg" alt="Roasted duck">
+          </div>
+          <div class="gallery-img">
+            <img src="restaurant-images/丝路宴/IMG_3417.jpg" alt="Xinjiang specialty">
+          </div>
+          <div class="gallery-img">
+            <img src="restaurant-images/丝路宴/IMG_3418.jpg" alt="Traditional dishes">
+          </div>
+        </div>
+
+        <div class="restaurant-details">
+          <div class="detail-block">
+            <div class="detail-label">Opening Hours</div>
+            <div class="hours-display">7:30 AM – 2:00 PM, 5:00 PM – 9:30 PM</div>
+            <div class="hours-note">Breakfast, lunch & dinner (Closed 2-5pm)</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Cuisine Type</div>
+            <div class="detail-value">Xinjiang & Islamic</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">🌟 Special Highlight</div>
+            <div class="detail-value" style="color: var(--green-bright); font-weight: 600;">Cantonese Dim Sum (Before 11:30 AM)</div>
+            <div class="address-text">Enjoy traditional Guangzhou dim sum breakfast before 11:30 AM</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">English Address</div>
+            <div class="detail-value">No. 76, Tianhe North Road, Tianhe District</div>
+            <div class="address-text">Near Metro Lines 3 & APM (570m walk)</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Chinese Address</div>
+            <div class="detail-value">天河区林和街道天河北路76号2-3层</div>
+            <div class="address-text">距地铁3号线/APM线林和西站B口步行570m</div>
+          </div>
+        </div>
+
+        <div style="padding: 0 40px 40px; display: flex; gap: 12px;">
+          <a href="https://surl.amap.com/bRDugiG4fpd" target="_blank" class="btn-amap">Open in Amap →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOW WE CAN HELP SECTION -->
+  <section class="help-section">
+    <div class="help-container">
+      <h2>How We Can Help Your Guangzhou Trip</h2>
+
+      <div class="services-grid">
+        <div class="service-item">
+          <div class="service-icon">🍜</div>
+          <h3 class="service-title">Halal Restaurants & Dining</h3>
+          <p class="service-desc">Complete guides to halal restaurants and food across Guangzhou.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">🏨</div>
+          <h3 class="service-title">Hotels with Halal Breakfast</h3>
+          <p class="service-desc">Find hotels offering halal breakfast or located near halal restaurants.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">✈️</div>
+          <h3 class="service-title">Airport Transfers</h3>
+          <p class="service-desc">Reliable airport pickups and local transportation support.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">🗺️</div>
+          <h3 class="service-title">Private Tours & Experiences</h3>
+          <p class="service-desc">Local guides and personalized experiences tailored to you.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">🏢</div>
+          <h3 class="service-title">Canton Fair Support</h3>
+          <p class="service-desc">Navigation, logistics, and business visit coordination.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">💬</div>
+          <h3 class="service-title">Business Interpreters</h3>
+          <p class="service-desc">Professional interpretation and business communication support.</p>
+        </div>
+      </div>
+
+      <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 28px; line-height: 1.7;">Our local team in Guangzhou is here to help. We understand the needs of Muslim travelers and can make your trip smoother and more enjoyable.</p>
+
+      <a href="https://wa.me/85255087775" style="display: inline-flex; align-items: center; gap: 10px; background: var(--green-bright); color: white; padding: 16px 40px; border-radius: 100px; text-decoration: none; font-size: 16px; font-weight: 600; transition: all 0.2s; box-shadow: 0 4px 16px rgba(61,170,104,0.3);">WhatsApp Us →</a>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section id="cta">
+    <div class="cta-section">
+      <h2>Need Help Finding Halal Food in Guangzhou?</h2>
+
+      <div class="cta-checklist">
+        <div class="cta-item">Halal restaurants and dining guides</div>
+        <div class="cta-item">Muslim-friendly hotels with halal breakfast</div>
+        <div class="cta-item">Airport transfers and transportation</div>
+        <div class="cta-item">Private tours and local experiences</div>
+        <div class="cta-item">Canton Fair visits and support</div>
+        <div class="cta-item">Business interpreters and guides</div>
+      </div>
+
+      <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto;">Our local team is happy to help. We're Guangzhou locals and can help make your trip smoother and more enjoyable.</p>
+
+      <a href="https://wa.me/85255087775" class="btn-whatsapp">WhatsApp Us</a>
+    </div>
+  </section>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/85255087775" class="whatsapp-float" title="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.255.949c-1.238.503-2.335 1.236-3.22 2.121-.885.885-1.618 1.982-2.121 3.22a9.9 9.9 0 00-.6 2.81 9.88 9.88 0 00.122 2.908c.077.46.233.902.451 1.312.006.013.012.027.02.04a9.884 9.884 0 002.064 3.411l.087.09a9.9 9.9 0 001.47 1.338c.897.545 1.798.927 2.63 1.129a9.9 9.9 0 004.59-.098l4.751-1.188a9.897 9.897 0 003.331-1.62 9.88 9.88 0 002.064-3.411c.218-.41.374-.852.451-1.312a9.88 9.88 0 00.122-2.908 9.87 9.87 0 00-.6-2.81c-.503-1.238-1.236-2.335-2.121-3.22-.885-.885-1.982-1.618-3.22-2.121a9.87 9.87 0 00-2.81-.6 9.88 9.88 0 00-2.908.122m5.064 18.057a11.852 11.852 0 01-7.46 0C6.102 23.421 3.712 22.998 1.58 21.956a11.853 11.853 0 01-3.154-2.313A11.852 11.852 0 01-3.04 16.3a11.853 11.853 0 01-.882-4.59c0-1.558.3-3.09.882-4.59 1.041-2.132 2.465-4.03 4.28-5.595a11.85 11.85 0 013.154-2.313 11.851 11.851 0 014.59-.882c1.558 0 3.09.3 4.59.882 2.132 1.041 4.03 2.465 5.595 4.28a11.85 11.85 0 012.313 3.154 11.851 11.851 0 01.882 4.59"/>
+    </svg>
+  </a>
+
+</body>
+</html>
